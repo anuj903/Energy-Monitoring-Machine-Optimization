@@ -1,4 +1,4 @@
-# Energy Optimization & Electricity Forecasting — Melting Furnace (v6.0)
+# Energy Optimization & Electricity Forecasting - Melting Furnace (v6.0)
 
 A full-stack industrial energy intelligence system for a melting furnace. The system combines real-time anomaly detection, prescriptive analysis, multi-granularity historical analytics, and a 15-day energy consumption forecast, all served through an interactive web dashboard.
 
