@@ -8,7 +8,7 @@ A full-stack industrial energy intelligence system for a melting furnace. The sy
 
 The dataset was synthetically generated to simulate one year of realistic furnace operation, incorporating real-world defects such as power spikes, power drops, power factor deviations, and idle-time anomalies. After understanding the underlying process parameters, the data was used to train two ML models: one for forecasting and one for anomaly detection.
 
-The entire pipeline — from raw telemetry to actionable insight, was iterated across multiple versions, with v6.0 being the final production-ready implementation.
+The entire pipeline, from raw telemetry to actionable insight, was iterated across multiple versions, with v6.0 being the final production-ready implementation.
 
 ---
 
@@ -29,7 +29,7 @@ The entire pipeline — from raw telemetry to actionable insight, was iterated a
 
 ```
 6.0/
-├── app.py                                        # Flask backend — API routes + model serving
+├── app.py                                        # Flask backend, API routes + model serving
 ├── Forecast_model.py                             # Prophet forecasting model — training script
 ├── Energy_anomaly_detection_model.py             # XGBoost anomaly classifier — training script
 │
@@ -74,7 +74,7 @@ The dataset was synthetically generated to reflect realistic industrial furnace 
 
 ## ML Models
 
-### Anomaly Detection — XGBoost Classifier
+### Anomaly Detection - XGBoost Classifier
 
 **File:** [Energy_anomaly_detection_model.py](Energy_anomaly_detection_model.py)
 
@@ -168,8 +168,8 @@ Dark-themed, fully responsive single-page dashboard built with Chart.js and Plot
 | Layer | Technology |
 |---|---|
 | Backend | Python, Flask |
-| ML — Classification | XGBoost, scikit-learn |
-| ML — Forecasting | Prophet (Meta) |
+| ML - Classification | XGBoost, scikit-learn |
+| ML - Forecasting | Prophet (Meta) |
 | Data Processing | pandas |
 | Model Persistence | joblib |
 | Frontend Charts | Plotly.js, Chart.js |
@@ -201,8 +201,8 @@ Open `http://localhost:5000` in your browser.
 
 ## Key Design Decisions
 
-- **Synthetic data with injected defects** — allowed full control over anomaly distribution and edge case coverage without depending on scarce labeled industrial data.
-- **XGBoost for real-time classification** — low latency inference on minute-level feature vectors; no sequence modeling required since anomalies are point events.
-- **Prophet for daily forecasting** — handles seasonality (weekends, month-end) and accepts exogenous regressors (production load, anomaly intensity) cleanly.
-- **Three data granularities** — minute-wise (detection), batch-wise (operational review), daily (forecasting) each serve a distinct use case on the same dashboard.
-- **Prescription mapping** — deterministic lookup table maps each anomaly class to a root cause and fix, making the system actionable without a separate recommendation engine.
+- **Synthetic data with injected defects** - allowed full control over anomaly distribution and edge case coverage without depending on scarce labeled industrial data.
+- **XGBoost for real-time classification** - low latency inference on minute-level feature vectors; no sequence modeling required since anomalies are point events.
+- **Prophet for daily forecasting** - handles seasonality (weekends, month-end) and accepts exogenous regressors (production load, anomaly intensity) cleanly.
+- **Three data granularities** - minute-wise (detection), batch-wise (operational review), daily (forecasting) each serve a distinct use case on the same dashboard.
+- **Prescription mapping** - deterministic lookup table maps each anomaly class to a root cause and fix, making the system actionable without a separate recommendation engine.
